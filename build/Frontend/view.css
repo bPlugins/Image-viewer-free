@@ -1,0 +1,646 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/* stylelint-disable CssSyntaxError */
+html {
+  scroll-behavior: smooth;
+}
+
+.dashicons {
+  font-family: dashicons !important;
+}
+
+.wp-block-bpivb-image-viewer-directory * {
+  box-sizing: border-box;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer {
+  width: 100%;
+  height: 100%;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbImageMap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbImageMap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbImageMap .resizable-draggable {
+  position: absolute;
+  cursor: move;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbImageMap .resizable-draggable #resizeHandle {
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbPanorama {
+  max-width: 100%;
+  display: inline-block;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivbPanorama canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-wapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-wapper > div {
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-wapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-imageTransfrom-wrapper {
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-imageTransfrom-wrapper .bpivb-image-rounded {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-image-wrapper {
+  margin: 0 auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-image-wrapper .bpivb-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.5s ease;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-viewport-image-wrapper {
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-viewport-image-wrapper .bpivb-viewport {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-multImage-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-multImage-wrapper .bpivb-multImage-container {
+  position: relative;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-multImage-wrapper .bpivb-multImage-container .bpivb-multlayer-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container {
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  /* --- Image Preview Area --- */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container .bpivb-image-preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: object-fit 0.3s ease;
+  transition: object-fit 0.3s ease, -o-object-fit 0.3s ease;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container {
+  /* --- Object Fit Classes --- */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container .object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container .object-fit-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .bpivb-image-preview-container .object-fit-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper {
+  /* --- Aspect Ratio Classes  --- */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .aspect-ratio-1-1 {
+  aspect-ratio: 1/1;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .aspect-ratio-16-9 {
+  aspect-ratio: 16/9;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .aspect-ratio-4-3 {
+  aspect-ratio: 4/3;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .aspect-ratio-3-2 {
+  aspect-ratio: 3/2;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-main-container .bpivb-preview-area-wrapper .aspect-ratio-21-9 {
+  aspect-ratio: 21/9;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer {
+  /* HotspotAnnotations Css */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section {
+  scroll-margin-top: 2rem;
+  /* Image wrapper */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper {
+  position: relative;
+  border-radius: 1rem;
+  overflow: visible !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-img {
+  border-radius: 5px;
+  width: 100%;
+  display: block;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper {
+  /* Hotspot marker */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 10;
+}
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .ping-active {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  opacity: 0.75;
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .marker-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker {
+  /* Tooltip */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip {
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 1rem;
+  width: 18rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+  text-align: left;
+  /* Tooltip X button */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  outline: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-title {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-des {
+  margin-bottom: 0.75rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  outline: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-link .toolsIcon {
+  display: inline-flex;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip .tooltip-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker {
+  /* Tooltip arrow */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-tooltip::before {
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .hotspot-image-wrapper .hotspot-marker .hotspot-marker.active .marker-circle {
+  background-color: #059669;
+  color: white;
+  transform: scale(1.25);
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section {
+  /*Summary Buttons Grid */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid {
+  display: grid;
+  padding: 4px 5px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 32px auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid .hotspot-summary-btn {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  transition: all 0.3s;
+  outline: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid .hotspot-summary-btn .btn-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid .hotspot-summary-btn .btn-inner .btn-id {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid .hotspot-summary-btn .btn-inner .btn-content .btn-title {
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid .hotspot-summary-btn .btn-inner .btn-content .btn-desc {
+  display: block;
+  overflow: visible;
+}
+@media only screen and (max-width: 1024px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 640px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-hotspot-section .bpivb-hotspot-summary-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer {
+  /*Zoom-pan Viewer Css */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section {
+  scroll-margin-top: 2rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card {
+  overflow: hidden;
+  margin: 0 auto;
+  /* Header */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+@media (max-width: 575px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-left {
+    width: 100%;
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right button {
+  border: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-btn {
+  padding: 0.5rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-btn svg {
+  width: 24px;
+  height: 24px;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-btn:hover {
+  background-color: rgba(28, 240, 9, 0.879);
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-zoom-display {
+  padding: 6px 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-weight: 700;
+  min-width: 80px;
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-zoom-display {
+    padding: 0.4rem 1rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header .zoom-pan-card-header-right .zoom-pan-zoom-display {
+    padding: 0.4rem 1rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .bpivb-zoom-pan-card-header {
+    padding: 11px 37px;
+    width: 100% !important;
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card {
+  /* Image container */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container .zoom-pan-image-wrapper {
+  overflow: hidden;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container .zoom-pan-image-wrapper .zoom-image {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container .cursor-grab {
+  cursor: grab;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container .cursor-grabbing {
+  cursor: grabbing;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container {
+  /* Drag hint */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container .zoom-pan-drag-hint {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  backdrop-filter: blur(4px);
+}
+@media only screen and (max-width: 1024px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container {
+    width: 100% !important;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .bpivb-zoom-pan-card .zoom-pan-image-container {
+    width: 100% !important;
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section {
+  /* Lightbox */
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox .lightbox-img-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox .lightbox-img-wrapper .lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox .lightbox-img-wrapper .zoom-pan-lightbox-close {
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+  padding: 5px 5px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox .lightbox-img-wrapper .zoom-pan-lightbox-close svg {
+  color: #111827;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-zoom-pan-section .zoom-pan-lightbox .lightbox-img-wrapper .zoom-pan-lightbox-close:hover {
+  color: #d1d5db;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section {
+  scroll-margin-top: 2rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body {
+  padding: 1rem;
+  overflow: hidden;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  width: 0px;
+  margin: 0 auto;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-before-wrapper {
+  position: absolute;
+  inset: 0;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-before-wrapper .ics-after {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-before-wrapper .ics-before {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: white;
+  cursor: ew-resize;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-slider-handle .ics-handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 3rem;
+  background-color: white;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-slider-handle .ics-handle-circle:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-slider-handle .ics-handle-circle .ics-handle-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #374151;
+  stroke-width: 2.5 !important;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-label {
+  position: absolute;
+  top: 1rem;
+  max-width: 24%;
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(4px);
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-label.ics-label-before {
+  left: 1rem;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-label.ics-label-after {
+  right: 1rem;
+}
+@media (max-width: 575px) {
+  .wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-slider-container .ics-slider-wrapper .ics-label {
+    padding: 0.5rem 0.5rem;
+  }
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-buttons {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-buttons .ics-btn {
+  padding: 0.75rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+  border: none;
+}
+.wp-block-bpivb-image-viewer-directory .bpivbImageViewer .bpivb-ics-section .ics-body .ics-buttons .ics-btn:hover {
+  filter: brightness(1.1);
+}
+.wp-block-bpivb-image-viewer-directory .icon {
+  font-style: inherit;
+}
+
+/*# sourceMappingURL=view.css.map*/

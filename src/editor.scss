@@ -1,0 +1,141 @@
+$primaryColor: #4527a4;
+
+// Custom
+.bdbNowEditing {
+	outline: 2px solid $primaryColor;
+}
+
+.wp-block-bpivb-image-viewer-directory {
+
+	.bpivbImageViewer {
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+
+		}
+
+		&.overly {
+			&::after {
+				width: 0;
+				height: 0;
+			}
+		}
+		//sidebar css
+		.mt20{
+			margin-top: 20px;
+		}
+	}
+
+}
+
+
+.bpivbTabPanel {
+	.components-tab-panel__tabs {
+		button {
+			width: 100% !important;
+		}
+	}
+
+	.components-tab-panel__tab-content{
+			.bPlPanelBody {
+					//resetbutton css
+					.btn-reset{
+						width: 37%;
+						padding: 7px 10px;
+						background-color: #f1f5f9;
+						color: #374151;
+						font-weight: 500;
+						border-radius: 0.75rem;
+						cursor: pointer;
+						transition: all 0.5s ease;
+						margin-left: 158px;
+						margin-top: 10px;
+					}
+					.btn-reset:hover{
+						background-color : #2363e3e2;
+						color:#ecedf0ff;
+					}
+					//aspectRatio button
+					.bPlButtonGrid {
+								display: grid;
+								grid-template-columns: repeat(2, 1fr);
+								gap: 12px;
+								margin-top: 10px;
+								justify-items: center;
+								position: relative;
+							.bplButtonWrapper{
+								width: 100%;
+								.bplButtons {
+									width: 100%;
+									max-width: 150px;
+									padding: 10px 10px;
+									border-color: #0073e6;
+									background-color:   #ffffff;
+									color:  #0073e6;
+									font-weight: 600;
+									border-radius: 6px;
+									margin-top: 5px;
+									cursor: pointer;
+									transition: all 0.2s ease;
+									display: flex;
+                  flex-direction: column;
+										.bplRatioLabel{
+											display: flex;
+											gap: 5px;
+											justify-content: center;
+										}
+								}
+									.bplButtons:hover {
+									   background-color: #005bb5;
+										 color: white;
+								   }
+									.bplButtons.active {
+											background-color: #0073e6;
+											color: white;
+											border-color: #0073e6;
+											box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.25);
+											transform: none;
+                  }
+							}
+					}
+					.components-base-control{
+								.components-base-control__field{
+									.components-flex{
+										.components-checkbox-control__input-container{
+											.components-checkbox-control__input{
+												background-color: #e4e7ed;
+												border: 1px solid gray;
+											}
+											.components-checkbox-control__input:checked{
+												background-color: #146EF5;
+											}
+										}
+									}
+								}
+					}
+			}
+	}
+	// note Css
+
+	.text {
+	  .warText{
+			font-size: 15px;
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+		background-color: #e7f3fe;
+		color: #084298;
+		padding: 10px;
+	  border-left: 5px solid #2196F3;
+    border-radius: 4px;
+    margin: 9px 0px;
+	}
+}
+
+
