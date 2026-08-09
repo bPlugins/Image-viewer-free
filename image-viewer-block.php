@@ -9,6 +9,7 @@ if (! class_exists('bpivbBlock')) {
         {
             add_action('init', [$this, 'onInit']);
             add_action('enqueue_block_assets', [$this, 'enqueueBlockAssets']);
+            add_action('enqueue_block_assets', [$this, 'pinBlockStyleVersions'], 5);
             add_action('enqueue_block_editor_assets', [$this, 'bpivbEnqueueBlockEditorAssets']);
             add_action('enqueue_block_assets', [$this, "bpivbFrontendScript"]);
             add_action('rest_api_init', function () {
@@ -190,6 +191,28 @@ if (! class_exists('bpivbBlock')) {
         public function onInit()
         {
             register_block_type(__DIR__ . '/build');
+        }
+
+        /**
+         * Version the block's stylesheets against the build.
+         *
+         * block.json declares no "version", so WordPress versions the block's styles
+         * with the WordPress version — static across rebuilds. index.js busts from the
+         * content hash in index.asset.php, so the editor could run new markup against
+         * a stale cached stylesheet.
+         *
+         * @return void
+         */
+        public function pinBlockStyleVersions()
+        {
+            $handles = ['bpivb-image-viewer-directory-editor-style', 'bpivb-image-viewer-directory-style'];
+            $styles  = wp_styles();
+
+            foreach ($handles as $handle) {
+                if (isset($styles->registered[$handle])) {
+                    $styles->registered[$handle]->ver = BPIVB_PLUGIN_VERSION;
+                }
+            }
         }
     }
 

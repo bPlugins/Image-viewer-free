@@ -1,4 +1,4 @@
-import { Button, Dashicon, Popover, Tooltip } from "@wordpress/components";
+import { Button, Dashicon, Popover, Tooltip, ToolbarGroup } from "@wordpress/components";
 import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import "./themeSwitcher.scss";
@@ -32,8 +32,11 @@ const ThemeSwitcher = ({
     );
   };
 
+  // Rendered inside the block toolbar, so this has to be a ToolbarGroup to pick up
+  // the toolbar's own metrics (48px min-height, side padding, separator border). A
+  // plain <div> is skipped by the toolbar's `> .components-toolbar-group` rules.
   return (
-    <div className="bpl_theme_picker" style={{ display: "flex" }}>
+    <ToolbarGroup className="bpl_theme_picker">
       {visibleThemes?.length > 0 &&
         visibleThemes?.map((theme) => (
           <ThemeButton key={theme?.value} theme={theme} />
@@ -87,7 +90,7 @@ const ThemeSwitcher = ({
           )}
         </>
       )}
-    </div>
+    </ToolbarGroup>
   );
 };
 

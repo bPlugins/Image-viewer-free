@@ -1,6 +1,6 @@
 {
   "name": "image-viewer",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A Gutenberg block to embed images with few advance options such as zoom, pin, magnify, map and Pano.",
   "author": "The WordPress Contributors",
   "license": "GPL-2.0-or-later",

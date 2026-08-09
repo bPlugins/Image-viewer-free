@@ -49,3 +49,16 @@ $primaryColor: #146EF5;
 		opacity: 1;
 	}
 }
+// Unpublished viewers still show their shortcode, but it renders nothing for
+// visitors — mute the pill and say so, so it isn't copied out expecting output.
+.bpivbAdminShortcode--unpublished input {
+	background-color: #8c8f94;
+}
+
+.bpivbAdminShortcodeHint {
+	display: block;
+	margin-top: 4px;
+	color: #8c8f94;
+	font-size: 11px;
+	font-style: italic;
+}

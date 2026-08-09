@@ -67,44 +67,64 @@ if ( !class_exists( 'bpivbShortcode' ) ) {
 		//*Adjusted with post.js  //And the short code copies it with this function.
 		public function manage_bpivb_postsCustomColumns( $column_name, $post_ID ) {
 			if ( $column_name == 'shortcode' ) {
-				echo '<div class="bpivbAdminShortcode" id="bpivbAdminShortcode-' . esc_attr( $post_ID ) . '">
-					<input value="[bpivb id=' . esc_attr( $post_ID ) . ']" onclick="copybpivbAdminShortcode(\'' . esc_attr( $post_ID ) . '\')">
+				// A shortcode pointing at a draft renders nothing for visitors, so flag that
+				// here instead of letting it be copied into a page that comes out blank.
+				$is_published = 'publish' === get_post_status( $post_ID );
+
+				echo '<div class="bpivbAdminShortcode' . ( $is_published ? '' : ' bpivbAdminShortcode--unpublished' ) . '" id="bpivbAdminShortcode-' . esc_attr( $post_ID ) . '">
+					<input readonly value="[bpivb id=' . esc_attr( $post_ID ) . ']" onclick="copybpivbAdminShortcode(\'' . esc_attr( $post_ID ) . '\')">
 					<span class="tooltip">' . esc_html__( 'Copy To Clipboard', 'image-viewer' ) . '</span>
 				</div>';
+
+				if ( ! $is_published ) {
+					echo '<span class="bpivbAdminShortcodeHint">' . esc_html__( 'Publish to make this shortcode work.', 'image-viewer' ) . '</span>';
+				}
 			}
 		}
 
 		//*Shortcode render function
-		// public function bpivb_onAddShortcode($atts) {
-		// 		if (isset($atts['id'])){
-		// 					$post = get_post($atts['id']);
-		// 					if ($post) {
-		// 							$blocks = parse_blocks($post->post_content);
-		// 							foreach ($blocks as $block) {
-		// 									if ($block['blockName'] === 'bpivb/image-viewer-directory') {
-		// 										return render_block( $block );
-		// 									}
-		// 							}
-		// 					} else {
-		// 						return 'Post not found or invalid post type.';
-		// 					}
-		// 		}
-		// }
-		public function bpivb_onAddShortcode($atts)
-		{
-			if (is_array($atts) && isset($atts['id'])) {
-				$post = get_post(intval($atts['id']));
-				if ($post && 'bpivb' === $post->post_type && 'publish' === $post->post_status) {
-					$blocks = parse_blocks($post->post_content);
-					foreach ($blocks as $block) {
-						if ($block['blockName'] === 'bpivb/image-viewer-directory') {
-							return render_block($block);
-						}
-					}
-				} else {
-					return esc_html__('Post not found or invalid post type.', 'image-viewer');
+		public function bpivb_onAddShortcode( $atts ) {
+			$atts    = shortcode_atts( [ 'id' => 0 ], (array) $atts, 'bpivb' );
+			$post_id = absint( $atts['id'] );
+			$post    = $post_id ? get_post( $post_id ) : null;
+
+			if ( ! $post_id ) {
+				return $this->bpivb_shortcodeNotice( __( 'No Image Viewer ID given. Use [bpivb id=123].', 'image-viewer' ) );
+			}
+
+			if ( ! $post || $this->post_type !== $post->post_type ) {
+				/* translators: %d: the ID used in the shortcode. */
+				return $this->bpivb_shortcodeNotice( sprintf( __( 'No Image Viewer found with ID %d.', 'image-viewer' ), $post_id ) );
+			}
+
+			// Drafts still render for anyone who can edit them, so the shortcode can be
+			// previewed before publishing. Visitors only ever see published viewers.
+			if ( 'publish' !== $post->post_status && ! current_user_can( 'edit_post', $post->ID ) ) {
+				return $this->bpivb_shortcodeNotice( __( 'This Image Viewer is not published yet.', 'image-viewer' ) );
+			}
+
+			foreach ( parse_blocks( $post->post_content ) as $block ) {
+				if ( 'bpivb/image-viewer-directory' === $block['blockName'] ) {
+					return render_block( $block );
 				}
 			}
+
+			return $this->bpivb_shortcodeNotice( __( 'This Image Viewer has no viewer block to display.', 'image-viewer' ) );
+		}
+
+		/**
+		 * Shortcode problems are an authoring mistake, so the message goes to users who
+		 * can act on it. Visitors get an empty string rather than broken-looking text.
+		 *
+		 * @param string $message Notice to show to editors.
+		 * @return string
+		 */
+		private function bpivb_shortcodeNotice( $message ) {
+			if ( ! current_user_can( 'edit_posts' ) ) {
+				return '';
+			}
+
+			return '<p class="bpivbShortcodeNotice">' . esc_html( $message ) . '</p>';
 		}
 	}
   new bpivbShortcode();

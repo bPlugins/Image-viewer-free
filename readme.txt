@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image zoom, image map, photo viewer, gutenberg block
 Requires at least: 6.5
 Tested up to: 7.0
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -171,6 +171,13 @@ No, this block is beginner-friendly and does not require any coding knowledge to
 
 == Changelog ==
 
+= 1.0.10 – 9 August 2026 =
+* Fixed: Block styles could load from cache after an update — stylesheets now version with the build.
+* Fixed: Theme switcher alignment inside the block toolbar.
+* Improved: Plugin data cleanup on delete now runs through a dedicated uninstall handler.
+* Improved: Shortcodes now preview unpublished viewers for editors, and the list table flags a shortcode that is not live yet.
+* Improved: Clearer shortcode messages for a missing or wrong ID, shown to editors only.
+
 = 1.0.9 – 4 July 2026 =
 * Admin Dashboard: Banner Update.
 * New Theme: Interactive Image Accordion.
@@ -217,6 +224,11 @@ No, this block is beginner-friendly and does not require any coding knowledge to
 
 
 == Upgrade Notice ==
+
+= 1.0.10 – 9 August 2026 =
+* Fixed: Block styles could load from cache after an update.
+* Fixed: Theme switcher alignment inside the block toolbar.
+* Improved: Plugin data cleanup on delete now runs through a dedicated uninstall handler.
 
 = 1.0.9 – 4 July 2026 =
 * New Theme: Interactive Image Accordion.

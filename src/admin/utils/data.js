@@ -192,6 +192,17 @@ export const welcomeInfo = adminUrl => ({
   },
   changelogs: [
     {
+      type: 'update',
+      version: '1.0.10 – 9 August 2026',
+      list: [
+        'Fixed: Block styles could load from cache after an update — stylesheets now version with the build.',
+        'Fixed: Theme switcher alignment inside the block toolbar.',
+        'Improved: Plugin data cleanup on delete now runs through a dedicated uninstall handler.',
+        'Improved: Shortcodes now preview unpublished viewers for editors, and the list table flags a shortcode that is not live yet.',
+        'Improved: Clearer shortcode messages for a missing or wrong ID, shown to editors only.',
+      ],
+    },
+    {
       type: 'new',
       version: '1.0.9 – 4 July 2026',
       list: [

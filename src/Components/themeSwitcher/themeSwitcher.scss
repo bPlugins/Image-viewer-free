@@ -84,17 +84,47 @@
   }
 }
 
+// Viewer-type switcher, rendered into the block toolbar via <BlockControls>.
+//
+// Scoped on .bpl_theme_picker alone, never on .components-toolbar-group: ToolbarGroup
+// only emits that class when a ToolbarContext happens to be in scope and falls back to
+// the legacy .components-toolbar otherwise, so depending on it makes these rules
+// silently stop matching.
 .bpl_theme_picker {
-  display: flex;
-  align-items: center;
-  gap: 0.2rem;
+  .bpl_theme_picker-btn.components-button {
+    white-space: nowrap;
 
-  // theme button
-  &-btn {
-    position: relative;
+    // Solid fill across the whole button, matching bpl-tools' primary blue.
     &.active {
-      background: #4527a4;
+      background: #146EF5;
       color: #fff;
+
+      &:hover:not(:disabled) {
+        background: #146EF5;
+        color: #fff;
+      }
+    }
+
+    // The toolbar's focus style is `inset 0 0 0 1px #fff` plus an outer ring. The
+    // white inset reads as a stray border inside the filled pill, so drop the
+    // shadow entirely here...
+    &:focus::before {
+      box-shadow: none;
+    }
+
+    // ...and restore a plain outer ring for keyboard users only, so tabbing through
+    // the switcher still shows where focus is. Declared after the rule above so it
+    // wins on source order.
+    &:focus-visible::before {
+      box-shadow: 0 0 0 var(--wp-admin-border-width-focus) var(--wp-admin-theme-color);
     }
   }
+}
+
+// Keeps the group on a single row instead of wrapping to a second line and growing
+// taller than the rest of the toolbar. Both variants are listed so this beats the wrap
+// set by whichever container class ToolbarGroup ends up rendering.
+.bpl_theme_picker.components-toolbar-group,
+.bpl_theme_picker.components-toolbar {
+  flex-wrap: nowrap;
 }

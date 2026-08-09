@@ -3,8 +3,7 @@
  * Plugin options for All In One Image Viewer.
  *
  * Currently holds the "delete data on uninstall" preference that the dashboard
- * Settings page toggles. The actual cleanup runs from bpivb_uninstall_cleanup()
- * in image-viewer.php.
+ * Settings page toggles. The actual cleanup runs from uninstall.php.
  *
  * @package image-viewer
  */
