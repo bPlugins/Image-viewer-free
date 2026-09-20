@@ -10,6 +10,8 @@ const ZoomImage = ({ attributes }) => {
     disableYAxis = false,
     startScale = 1,
     step = 0.3,
+    panOnlyWhenZoomed = false,
+    contain = 'null',
   } = zoom || {};
 
   const panZoomRef = useRef(null);
@@ -92,6 +94,8 @@ const ZoomImage = ({ attributes }) => {
     disableYAxis,
     startScale,
     step,
+    panOnlyWhenZoomed,
+    contain,
   ]);
 
   // ── 3. Editor: wheel zoom listener ───────────────────────────────────────

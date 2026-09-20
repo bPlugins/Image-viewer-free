@@ -1,4 +1,4 @@
-const slug = '';
+const slug = 'image-viewer';
 
 import bannerSVG from '../assets/banner.svg';
 

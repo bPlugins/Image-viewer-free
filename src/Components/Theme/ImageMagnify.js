@@ -36,11 +36,12 @@ const { viewerType,  magnify, cId, img,  } = attributes;
                   data-magnify-speed={magnify?.speed}
                   data-magnify-timeout={magnify?.timeOut}  //ata just  frontend aer tablete aer mobile kaj kore
                   // touchBottomOffset='0'
-                  finalWidth='500'
-                  finalHeight='500'
-                  magnifiedWidth='1000'
-                  limitBounds={false}
-                  mobileCloseEvent='touchstart'
+                  {...(magnify?.finalWidth ? { 'data-magnify-finalwidth': magnify.finalWidth } : {})}
+                  {...(magnify?.finalHeight ? { 'data-magnify-finalheight': magnify.finalHeight } : {})}
+                  {...(magnify?.magnifieWidth ? { 'data-magnify-magnifiedwidth': magnify.magnifieWidth } : {})}
+                  {...(magnify?.magnifieHeight ? { 'data-magnify-magnifiedheight': magnify.magnifieHeight } : {})}
+                  data-magnify-limitbounds={magnify?.limitBounds ? 'true' : 'false'}
+                  data-magnify-mobilecloseevent='touchstart'
           />
         </div>
      </div>

@@ -45,18 +45,18 @@ const Type = ({ attributes, setAttributes }) => {
         title={__("Image Source & Type", "image-viewer")}
         initialOpen={true}
       >
-        <Label className="mb5">{__("Image:", "panorama-block")}</Label>
+        <Label className="mb5">{__("Image:", "image-viewer")}</Label>
         <InlineDetailMediaUpload
           value={img}
           types={["image"]}
           onChange={(val) => setAttributes({ img: val })}
-          placeholder={__("Enter Image URL", "panorama-block")}
+          placeholder={__("Enter Image URL", "image-viewer")}
         />
         {viewerType === "pano" && (
           <>
             <UnitControl
               className="mt20"
-              label={__("Width:", "panorama-block")}
+              label={__("Width:", "image-viewer")}
               labelPosition="left"
               value={width}
               onChange={(val) => setAttributes({ width: val })}
@@ -64,7 +64,7 @@ const Type = ({ attributes, setAttributes }) => {
             />
             <UnitControl
               className="mt10"
-              label={__("Height:", "panorama-block")}
+              label={__("Height:", "image-viewer")}
               labelPosition="left"
               value={height}
               onChange={(val) => setAttributes({ height: val })}

@@ -6,7 +6,11 @@ const ImagePano = ({attributes,clientId}) => {
 
   useEffect(() => {
       if (viewerType === 'pano') {
-          pano(clientId, img, autoRotate, rotateSpeed, hideControl);
+          // pano() returns a teardown — required so a stale invocation (the
+          // block editor's React 18 StrictMode runs this effect twice per
+          // mount) can't still insert a second Panolens canvas after a
+          // newer one has already built its own. See functions.js.
+          return pano(clientId, img, autoRotate, rotateSpeed, hideControl);
       }
 
     }, [ viewerType, magnify,autoRotate,img,rotateSpeed,hideControl, width, height]);

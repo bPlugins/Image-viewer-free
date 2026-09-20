@@ -1,10 +1,11 @@
 
-import { PanelBody, RangeControl, ToggleControl,__experimentalBorderControl as BorderControl,__experimentalSpacer as Spacer } from '@wordpress/components';
+import { PanelBody, RangeControl, SelectControl, ToggleControl,__experimentalBorderControl as BorderControl,__experimentalSpacer as Spacer } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
+import { zoomContainOpt } from '../../../utils/options';
 
 const Zoom = ({ updateObject, zoom }) => {
     //zoom
-    const { disablePan, disableZoom, disableXAxis, disableYAxis, startScale, step,border } = zoom;
+    const { disablePan, disableZoom, disableXAxis, disableYAxis, startScale, step, contain, border } = zoom;
     return <PanelBody className='bPlPanelBody' title={__('Zoom Options', 'image-viewer')} initialOpen={true}>
 
         <ToggleControl label={__('Disable Pan', 'image-viewer')} className='mt10' checked={disablePan} onChange={(val) => updateObject('zoom', 'disablePan', val)} __nextHasNoMarginBottom={ true } />
@@ -28,6 +29,15 @@ const Zoom = ({ updateObject, zoom }) => {
         <RangeControl label={__('Start Scale', 'image-viewer')} className='mt10' value={startScale} onChange={(val) => updateObject('zoom', 'startScale', val)} />
 
         <RangeControl label={__('Step', 'image-viewer')} className='mt10' value={step} onChange={(val) => updateObject('zoom', 'step', val)} />
+
+        <SelectControl
+            label={__('Contain', 'image-viewer')}
+            className='mt10'
+            value={contain}
+            options={zoomContainOpt}
+            onChange={(val) => updateObject('zoom', 'contain', val)}
+            __next40pxDefaultSize={true}
+        />
 
     </PanelBody>
 }

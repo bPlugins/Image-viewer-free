@@ -2,7 +2,10 @@
 /**
  * Plugin Name: All In One Image Viewer
  * Description: Turn an image into an interactive viewer: zoom, magnify, image map and 360° panorama rotation.
- * Version: 1.0.10
+ * Version: 1.0.12
+ * Requires at least: 6.5
+ * Tested up to: 7.1
+ * Requires PHP: 7.4
  * Author: bPlugins
  * Author URI: http://bplugins.com
  * License: GPLv3 or later
@@ -24,7 +27,7 @@ if ( function_exists( 'iv_fs' ) ) {
     // Local hosts carry a port (Studio serves on localhost:PORT), so an exact
     // 'localhost' comparison never matched and asset versions stayed frozen.
     $bpivb_is_local = (bool) preg_match( '/^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/', $bpivb_http_host );
-    define( 'BPIVB_PLUGIN_VERSION', $bpivb_is_local ? time() : '1.0.10' );
+    define( 'BPIVB_PLUGIN_VERSION', $bpivb_is_local ? time() : '1.0.12' );
     define('BPIVB_PLUGIN_PATH', plugin_dir_path(__FILE__));
     define('BPIVB_DIR', plugin_dir_url(__FILE__));
     define('BPIVB_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
@@ -49,7 +52,7 @@ if ( function_exists( 'iv_fs' ) ) {
                     'is_org_compliant'    => true,
                     'menu'                => array(
                         'slug'           => 'edit.php?post_type=bpivb',
-                        'first-path'     => 'edit.php?post_type=bpivb&page=Image_viewer_block#/welcome',
+                        'first-path'     => 'edit.php?post_type=bpivb&page=image_viewer_block#/welcome',
                         'contact'        => false,
                         'support'        => false,
                     ),
@@ -66,6 +69,9 @@ if ( function_exists( 'iv_fs' ) ) {
 
     // Main file logic
     require_once BPIVB_PLUGIN_PATH . 'includes/class-bpivbPlugin.php';
+
+    // Ready-made sections for the inserter.
+    require_once BPIVB_PLUGIN_PATH . 'includes/patterns.php';
 
     new bpivbPlugin();
 

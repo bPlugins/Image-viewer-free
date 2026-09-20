@@ -134,13 +134,45 @@
     "html": false
   },
   "example": {
+    "viewportWidth": 800,
     "attributes": {
-      "preview": true,
-      "columns": {
-        "desktop": 1,
-        "tablet": 1,
-        "mobile": 1
-      }
+      "viewerType": "map",
+      "width": "100%",
+      "height": "320px",
+      "img": {
+        "id": null,
+        "url": "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'%3E%3Crect width='1200' height='700' fill='%23f4f1ea'/%3E%3Crect x='40' y='40' width='1120' height='620' fill='%23ffffff' stroke='%2316181a' stroke-width='6'/%3E%3Cline x1='440' y1='40' x2='440' y2='400' stroke='%2316181a' stroke-width='5'/%3E%3Cline x1='40' y1='400' x2='1160' y2='400' stroke='%2316181a' stroke-width='5'/%3E%3Cline x1='800' y1='400' x2='800' y2='660' stroke='%2316181a' stroke-width='5'/%3E%3Ctext x='150' y='230' font-family='Helvetica,Arial,sans-serif' font-size='26' fill='%234a4f52'%3EStudio%3C/text%3E%3Ctext x='700' y='230' font-family='Helvetica,Arial,sans-serif' font-size='26' fill='%234a4f52'%3EWorkshop%3C/text%3E%3C/svg%3E",
+        "alt": "Floor plan of the building",
+        "title": ""
+      },
+      "maps": [
+        {
+          "mapColor": "#0f766e40",
+          "mapBorder": { "color": "#0f766ecc", "width": "2px", "style": "solid" },
+          "mapShow": true,
+          "top": 40,
+          "left": 40,
+          "width": 150,
+          "height": 120,
+          "shape": "rect",
+          "link": "#",
+          "title": "Studio",
+          "target": "_self"
+        },
+        {
+          "mapColor": "#0f766e40",
+          "mapBorder": { "color": "#0f766ecc", "width": "2px", "style": "solid" },
+          "mapShow": true,
+          "top": 40,
+          "left": 220,
+          "width": 180,
+          "height": 120,
+          "shape": "rect",
+          "link": "#",
+          "title": "Workshop",
+          "target": "_self"
+        }
+      ]
     }
   },
   "editorScript": [

@@ -20,7 +20,7 @@ if( !class_exists( 'bpivbAdminMenu' ) ) {
             __('Help - bPlugins', 'image-viewer'),
             __('Help And Demo', 'image-viewer'),
             'manage_options',
-            'Image_viewer_block',
+            'image_viewer_block',
             [$this, 'renderDashboardPage']
           );
 		}

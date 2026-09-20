@@ -24,6 +24,20 @@ html {
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+			// A plain <img> defaults to display:inline, which — same as the
+			// .magnify and .bpivbPanorama containers below — sits on its
+			// container's text baseline and leaves a gap under it (this is
+			// what caused the Map viewer's version of the same gap).
+			display: block;
+		}
+
+		// Magnify Css — magnify.js wraps the <img> in its own `.magnify` div,
+		// and that div is `display: inline-block` (assets/css/magnify.css).
+		// Like an inline image, an inline-block sits on its container's text
+		// baseline, which reserves descender space below it — a visible white
+		// gap between the image and the block's own bottom edge.
+		.magnify {
+			display: block;
 		}
 
 		// Map Css
@@ -52,10 +66,11 @@ html {
 			}
 		}
 
-    //Pano Css
+    //Pano Css — same baseline-gap cause as .magnify above: this container
+		// was display:inline-block, so it sat on the parent's text baseline.
 		.bpivbPanorama {
 			max-width: 100%;
-			display: inline-block;
+			display: block;
 		}
 		.bpivbPanorama canvas {
 			width: 100% !important;

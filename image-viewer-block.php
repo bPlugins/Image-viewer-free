@@ -16,10 +16,20 @@ if (! class_exists('bpivbBlock')) {
                 register_rest_route('bpivb/v1', '/image-proxy', [
                     'methods'  => 'GET',
 
-                    //Permission check (prevents public abuse)
-                    'permission_callback' => function () {
-                        return current_user_can('upload_files');
-                    },
+                    /*
+                     * Public on purpose: the Pano viewer calls this proxy from the
+                     * published frontend to work around CORS on cross-origin images,
+                     * so it has to work for logged-out visitors, not just editors.
+                     * Gating it on upload_files made every visitor get a 401 and the
+                     * panorama silently render blank on every live page.
+                     *
+                     * Abuse is still bounded by what's below: scheme is restricted to
+                     * http/https, the fetch goes through wp_safe_remote_get() (blocks
+                     * requests to private/internal IPs), the response is only served
+                     * if its content-type matches the image mime whitelist, and a
+                     * successful fetch is cached for 12 hours per URL.
+                     */
+                    'permission_callback' => '__return_true',
 
                     //Strict URL validation before callback runs
                     'args' => [
@@ -163,19 +173,16 @@ if (! class_exists('bpivbBlock')) {
             // cannot open it — they get the public product pricing page instead.
             $editor_script_data .= 'var BPIVB_PRICING = ' . wp_json_encode([
                 'dashboard' => current_user_can('manage_options')
-                    ? admin_url('edit.php?post_type=bpivb&page=Image_viewer_block#/pricing')
+                    ? admin_url('edit.php?post_type=bpivb&page=image_viewer_block#/pricing')
                     : '',
                 'external'  => 'https://bplugins.com/products/image-viewer/pricing',
             ]) . ';';
 
             wp_add_inline_script('bpivb-image-viewer-directory-editor-script', $editor_script_data, 'before');
 
-            wp_enqueue_style(
-                'bpivb-image-viewer-directory-editor-css',
-                BPIVB_DIR . 'build/index.css',
-                [],
-                BPIVB_PLUGIN_VERSION
-            );
+            // build/index.css is declared as "editorStyle" in block.json, so WordPress
+            // already registers and iframes it as bpivb-image-viewer-directory-editor-style.
+            // Enqueueing it again here would only load it in the outer editor document.
         }
 
         public function bpivbFrontendScript()

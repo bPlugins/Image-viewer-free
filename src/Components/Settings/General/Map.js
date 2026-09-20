@@ -172,7 +172,7 @@ const Map = ({
               className="removeItem bsb-general-button"
               onClick={() => removePosition(activeIndex)}
             >
-              {__("Remove", "slider")}
+              {__("Remove", "image-viewer")}
             </Button>
           )}
         </div>
@@ -181,7 +181,7 @@ const Map = ({
       {/* Slide Add Button  */}
       <div className="addItem">
         <Button className="bsb-general-button" onClick={addPosition}>
-          {__("Add New Map", "slider")}
+          {__("Add New Map", "image-viewer")}
         </Button>
       </div>
     </PanelBody>
