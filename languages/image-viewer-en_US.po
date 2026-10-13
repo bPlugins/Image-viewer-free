@@ -33,7 +33,7 @@ msgstr ""
 
 #. Author URI of the plugin
 #: image-viewer.php
-msgid "http://bplugins.com"
+msgid "https://bplugins.com"
 msgstr ""
 
 #: includes/class-bpivbAdminMenu.php:20

@@ -325,7 +325,7 @@
     }
 
     // Handle window resizing
-    $(window).resize(refresh);
+    $(window).on('resize', refresh);
 
     return this.each(function () {
       // Initiate magnification powers

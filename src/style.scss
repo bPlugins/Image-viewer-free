@@ -64,6 +64,48 @@ html {
 					cursor: nwse-resize;
 				}
 			}
+
+			// Frontend-only hotspot marker (ImageMapFront.js) — shown when the
+			// colored area ("Show Map Area On Frontend") is off, so a visitor
+			// has something to see before they stumble onto the hotspot by
+			// randomly hovering the image.
+			.bpivbMapMarker {
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				transform: translate(-50%, -50%);
+				pointer-events: none;
+				// Above the clickable hotspot anchor (z-index: 20 in
+				// ImageMapFront.js) so it's visible, not painted over by it.
+				z-index: 25;
+
+				.bpivbMapMarkerDot {
+					position: absolute;
+					inset: 0;
+					border-radius: 50%;
+					background: #fff;
+					box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+				}
+
+				.bpivbMapMarkerPulse {
+					position: absolute;
+					inset: 0;
+					border-radius: 50%;
+					background: rgba(255, 255, 255, 0.7);
+					animation: bpivbMapMarkerPulse 1.8s ease-out infinite;
+				}
+			}
+		}
+
+		@keyframes bpivbMapMarkerPulse {
+			0% {
+				transform: scale(1);
+				opacity: 0.8;
+			}
+			100% {
+				transform: scale(2.6);
+				opacity: 0;
+			}
 		}
 
     //Pano Css — same baseline-gap cause as .magnify above: this container

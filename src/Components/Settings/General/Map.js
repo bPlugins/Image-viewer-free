@@ -10,7 +10,7 @@ import {
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
 import { targetShape } from "../../../utils/options";
-import { ColorControl, Notice } from "../../../../../bpl-tools/Components";
+import { ColorControl } from "../../../../../bpl-tools/Components";
 
 //device
 const Map = ({
@@ -90,12 +90,11 @@ const Map = ({
           onChange={(val) => updateItem(activeIndex, val, "shape")}
           options={targetShape}
           __next40pxDefaultSize={true}
-        />
-        <Notice status="info" isIcon={false}>
-          {__(
-            "💡 Note : If you change the shape’s width, height, or type, please adjust the width and height values below according to your preference to ensure proper display.",
+          help={__(
+            "Changing the shape or type may need the Width/Height below adjusted to display correctly.",
+            "image-viewer",
           )}
-        </Notice>
+        />
 
         <TextControl
           __nextHasNoMarginBottom={true}
@@ -128,42 +127,48 @@ const Map = ({
           __next40pxDefaultSize={true}
         />
 
-        {/* <SelectControl label={__('Target', 'image-viewer')} className='mt10' value={target} onChange={(val) => updateItem(activeIndex, val, 'target')} options={targetOpt}  __next40pxDefaultSize={true} /> */}
-
-        {/* <PanelRow>
-                <Label className="">{__('Width :', 'image-viewer')}</Label>
-                <Device />
-            </PanelRow> */}
         <NumberControl
-          label={__("Width", "image-viewer")}
+          label={__("Width (%)", "image-viewer")}
           labelPosition="side"
           className="mt10"
+          min={0}
+          max={100}
           value={mapWidth}
-          onChange={(val) => updateItem(activeIndex, parseInt(val), "width")}
+          onChange={(val) => updateItem(activeIndex, parseFloat(val), "width")}
+          help={__(
+            "Percent of the image's own width/height — not pixels — so the hotspot stays aligned with the image at any screen size.",
+            "image-viewer",
+          )}
         />
 
         <NumberControl
-          label={__("Height", "image-viewer")}
+          label={__("Height (%)", "image-viewer")}
           labelPosition="side"
           className="mt10"
+          min={0}
+          max={100}
           value={mapHeight}
-          onChange={(val) => updateItem(activeIndex, parseInt(val), "height")}
+          onChange={(val) => updateItem(activeIndex, parseFloat(val), "height")}
         />
 
         <NumberControl
-          label={__("Top", "image-viewer")}
+          label={__("Top (%)", "image-viewer")}
           labelPosition="side"
           className="mt10"
+          min={0}
+          max={100}
           value={top}
-          onChange={(val) => updateItem(activeIndex, parseInt(val), "top")}
+          onChange={(val) => updateItem(activeIndex, parseFloat(val), "top")}
         />
 
         <NumberControl
-          label={__("Left", "image-viewer")}
+          label={__("Left (%)", "image-viewer")}
           labelPosition="side"
           className="mt10"
+          min={0}
+          max={100}
           value={left}
-          onChange={(val) => updateItem(activeIndex, parseInt(val), "left")}
+          onChange={(val) => updateItem(activeIndex, parseFloat(val), "left")}
         />
 
         <div className="itemAction bsbButtonArea mt20">

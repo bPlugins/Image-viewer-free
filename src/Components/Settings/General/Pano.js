@@ -27,6 +27,7 @@ const Pano = ({ attributes, setAttributes }) => {
             min={-100}
             max={100}
             step={1}
+            help={__("Negative values rotate the opposite direction.", "image-viewer")}
           />
         </>
       )}

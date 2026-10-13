@@ -5,7 +5,7 @@ import {
   __experimentalSpacer as Spacer,
 } from "@wordpress/components";
 import { __ } from "@wordpress/i18n";
-import { Notice, ShadowControl } from "../../../../../bpl-tools/Components";
+import { ShadowControl } from "../../../../../bpl-tools/Components";
 import { updateData } from "../../../../../bpl-tools/utils/functions";
 
 const Magnify = ({ updateObject, magnify, setAttributes }) => {
@@ -29,14 +29,9 @@ const Magnify = ({ updateObject, magnify, setAttributes }) => {
         className="mt10"
         value={magnify?.timeOut}
         onChange={(val) => updateObject("magnify", "timeOut", val)}
+        help={__("Applies on the frontend only.", "image-viewer")}
       />
 
-      <Notice className="mt10" status="info" isDismissible={false}>
-        {__(
-          "Timeout (ms) setting only applies on the frontend.",
-          "image-viewer",
-        )}
-      </Notice>
       <NumberControl
         label={__("LensSize", "image-viewer")}
         labelPosition="side"
@@ -59,13 +54,11 @@ const Magnify = ({ updateObject, magnify, setAttributes }) => {
         className="mt10"
         value={magnify?.finalHeight}
         onChange={(val) => updateObject("magnify", "finalHeight", val)}
-      />
-      <Notice className="mt10" status="info" isDismissible={false}>
-        {__(
-          "Final Width/Height should match the image's actual displayed size for the lens to track the cursor accurately. Since this block is responsive, leave both empty (0) unless the image is shown at a fixed size — the lens then measures the image's real on-screen size automatically.",
+        help={__(
+          "Leave both empty — the lens then measures the image's real on-screen size automatically. Set these only if the image is shown at a fixed pixel size.",
           "image-viewer",
         )}
-      </Notice>
+      />
 
       <Spacer />
       <NumberControl
@@ -81,13 +74,11 @@ const Magnify = ({ updateObject, magnify, setAttributes }) => {
         className="mt10"
         value={magnify?.magnifieHeight}
         onChange={(val) => updateObject("magnify", "magnifieHeight", val)}
-      />
-      <Notice className="mt10" status="info" isDismissible={false}>
-        {__(
-          "Magnified Width/Height set the zoomed-in image size shown inside the lens.",
+        help={__(
+          "Size of the zoomed-in image shown inside the lens.",
           "image-viewer",
         )}
-      </Notice>
+      />
 
       <Spacer />
       <ToggleControl
@@ -96,13 +87,11 @@ const Magnify = ({ updateObject, magnify, setAttributes }) => {
         checked={!!magnify?.limitBounds}
         onChange={(val) => updateObject("magnify", "limitBounds", val)}
         __nextHasNoMarginBottom={true}
-      />
-      <Notice className="mt10" status="info" isDismissible={false}>
-        {__(
-          "When enabled, the lens stops at the image edges instead of following the cursor past them.",
+        help={__(
+          "Stops the lens at the image edges. Turn off to let the lens reach the entire image, including the edges.",
           "image-viewer",
         )}
-      </Notice>
+      />
 
       <Spacer />
       <ShadowControl

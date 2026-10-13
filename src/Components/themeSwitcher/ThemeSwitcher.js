@@ -1,4 +1,4 @@
-import { Button, Dashicon, Popover, Tooltip, ToolbarGroup } from "@wordpress/components";
+import { Dashicon, Popover, Tooltip, ToolbarButton, ToolbarGroup } from "@wordpress/components";
 import { useState } from "@wordpress/element";
 import { __ } from "@wordpress/i18n";
 import "./themeSwitcher.scss";
@@ -22,12 +22,12 @@ const ThemeSwitcher = ({
 
     return (
       <Tooltip text={isTooltip ? theme?.tooltip : null}>
-        <Button
+        <ToolbarButton
           className={`bpl_theme_picker-btn ${isActive ? "active" : ""}`}
           onClick={() => handleSelect(theme?.value)}
         >
           <span>{theme?.label}</span>
-        </Button>
+        </ToolbarButton>
       </Tooltip>
     );
   };
@@ -44,16 +44,15 @@ const ThemeSwitcher = ({
 
       {existingThemes?.length > 0 && (
         <>
-          <Button
+          <ToolbarButton
             icon={<Dashicon icon="admin-appearance" />}
-            variant="secondary"
             className="theme-trigger"
             aria-expanded={open}
             onClick={() => setOpen((prev) => !prev)}
             style={{ marginLeft: "1em" }}
           >
             {__(buttonLabel, "image-viewer")}
-          </Button>
+          </ToolbarButton>
 
           {open && (
             <Popover

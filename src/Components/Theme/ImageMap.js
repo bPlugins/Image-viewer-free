@@ -7,19 +7,15 @@ const ImageMap = ({attributes,setActiveIndex,updateItem}) => {
       <img src={img?.url} alt={img?.title} />
       {maps?.map((image, index) => {
         return (
-          <>
-            <ResizableDraggable
-              key={index}
-              bgColor={image?.mapColor}
-              shape={image?.shape}
-              // squareWidth={image?.squareWidth}
-              // squareHeight={image?.squareHeight}
-              mapBorder={image?.mapBorder}
-              onClick={() => setActiveIndex(index)}
-              value={image}
-              onChange={(info) => updateItem(index, { ...image, ...info })}
-            />
-          </>
+          <ResizableDraggable
+            key={index}
+            bgColor={image?.mapColor}
+            shape={image?.shape}
+            mapBorder={image?.mapBorder}
+            onClick={() => setActiveIndex(index)}
+            value={image}
+            onChange={(info) => updateItem(index, { ...image, ...info })}
+          />
         );
       })}
     </div>

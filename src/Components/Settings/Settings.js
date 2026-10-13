@@ -14,7 +14,7 @@ import { updateStyle } from '../../utils/functions';
 import ThemeSwitcher from '../themeSwitcher/ThemeSwitcher';
 import { AdvertiseCard } from '../../../../bpl-tools/ProControls';
 
-const PRICING_FALLBACK = 'https://bplugins.com/products/image-viewer/pricing';
+const PRICING_FALLBACK = 'https://bplugins.com/products/image-viewer/pricing/';
 
 // Go to the dashboard's own #/pricing route when the user can actually reach it;
 // otherwise fall back to the public product pricing page. Both open in a new tab.

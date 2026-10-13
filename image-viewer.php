@@ -2,12 +2,11 @@
 /**
  * Plugin Name: All In One Image Viewer
  * Description: Turn an image into an interactive viewer: zoom, magnify, image map and 360° panorama rotation.
- * Version: 1.0.12
+ * Version: 1.1.0
  * Requires at least: 6.5
- * Tested up to: 7.1
  * Requires PHP: 7.4
  * Author: bPlugins
- * Author URI: http://bplugins.com
+ * Author URI: https://bplugins.com
  * License: GPLv3 or later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain: image-viewer
@@ -27,7 +26,7 @@ if ( function_exists( 'iv_fs' ) ) {
     // Local hosts carry a port (Studio serves on localhost:PORT), so an exact
     // 'localhost' comparison never matched and asset versions stayed frozen.
     $bpivb_is_local = (bool) preg_match( '/^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/', $bpivb_http_host );
-    define( 'BPIVB_PLUGIN_VERSION', $bpivb_is_local ? time() : '1.0.12' );
+    define( 'BPIVB_PLUGIN_VERSION', $bpivb_is_local ? time() : '1.1.0' );
     define('BPIVB_PLUGIN_PATH', plugin_dir_path(__FILE__));
     define('BPIVB_DIR', plugin_dir_url(__FILE__));
     define('BPIVB_ASSETS_DIR', plugin_dir_url(__FILE__) . 'assets/');
@@ -36,7 +35,7 @@ if ( function_exists( 'iv_fs' ) ) {
         function iv_fs() {
             global $iv_fs;
             if ( ! isset( $iv_fs ) ) {
-                // Freemius Lite only — opt-in telemetry, no paid plans or license layer.
+                // Freemius SDK (free build, kept in vendor/freemius-lite).
                 require_once BPIVB_PLUGIN_PATH . 'vendor/freemius-lite/start.php';
 
                 $iv_fs_Config = [
@@ -58,12 +57,17 @@ if ( function_exists( 'iv_fs' ) ) {
                     ),
                 ];
 
-                $iv_fs = fs_lite_dynamic_init($iv_fs_Config);
+                $iv_fs = fs_dynamic_init($iv_fs_Config);
             }
             return $iv_fs;
         }
         // Init Freemius Lite.
         iv_fs();
+        // Show this plugin's own icon on the Freemius opt-in screen. Without it the SDK
+        // looks inside its own folder and falls back to a grey plug.
+        iv_fs()->add_filter( 'plugin_icon', function () {
+            return wp_normalize_path( BPIVB_PLUGIN_PATH . 'assets/icon.svg' );
+        } );
         do_action( 'iv_fs_loaded' );
     }
 
@@ -74,5 +78,43 @@ if ( function_exists( 'iv_fs' ) ) {
     require_once BPIVB_PLUGIN_PATH . 'includes/patterns.php';
 
     new bpivbPlugin();
+
+    // Redirect to the Help & Demo page on first activation.
+    register_activation_hook( __FILE__, 'bpivb_on_activation' );
+    add_action( 'admin_init', 'bpivb_maybe_redirect_after_activation' );
+
+    /**
+     * Set a flag so we know a redirect is needed on the next admin page load.
+     */
+    function bpivb_on_activation() {
+        update_option( 'bpivb_activation_redirect', true );
+    }
+
+    /**
+     * Redirect to the Help & Demo dashboard page once after activation.
+     */
+    function bpivb_maybe_redirect_after_activation() {
+        if ( ! get_option( 'bpivb_activation_redirect', false ) ) {
+            return;
+        }
+
+        delete_option( 'bpivb_activation_redirect' );
+
+        // Don't redirect on bulk activate or WP-CLI.
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        $activate_multi = isset( $_GET['activate-multi'] ) ? sanitize_text_field( wp_unslash( $_GET['activate-multi'] ) ) : '';
+        if ( wp_doing_ajax() || ( defined( 'WP_CLI' ) && WP_CLI ) || ! empty( $activate_multi ) ) {
+            return;
+        }
+
+        // The Freemius opt-in screen hides this plugin's menu until it is answered, so the page below
+        // would say "not allowed". Let Freemius show its opt-in first; it opens the first page after.
+        if ( function_exists( 'iv_fs' ) && iv_fs()->is_activation_mode() ) {
+            return;
+        }
+
+        wp_safe_redirect( admin_url( 'edit.php?post_type=bpivb&page=image_viewer_block' ) );
+        exit;
+    }
 
 }

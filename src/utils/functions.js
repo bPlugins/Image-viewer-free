@@ -174,7 +174,12 @@ export const pano = (clientId, img, autoRotate, rotateSpeed, hideControl) => {
         container: panoContainer,
         autoRotate,
         autoRotateSpeed: rotateSpeed,
-        controlBar: hideControl,
+        // Panolens' own `controlBar` option is the inverse of what our
+        // "Hide Control" toggle's name promises: controlBar: true SHOWS its
+        // control bar. hideControl was being passed straight through, so
+        // "Hide Control" ON was actually showing the control bar. Negate it
+        // so the toggle does what its label says.
+        controlBar: !hideControl,
       });
       viewer.add(panorama);
       activeViewer = viewer;

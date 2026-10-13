@@ -193,6 +193,21 @@ export const welcomeInfo = adminUrl => ({
   changelogs: [
     {
       type: 'update',
+      version: '1.1.0 – 13 October 2026',
+      list: [
+        'New: Four ready-made sections, one for each viewer type: Zoom, Magnify, Image Map and 360° Rotation.',
+        'Update: Freemius SDK updated to 2.13.5.',
+        'Fixed: After activating the plugin, the page no longer says you are not allowed to access it. The Freemius opt-in now opens first, then the first page of the plugin.',
+        'Fixed: The 360° panorama showed nothing to visitors on a published page.',
+        'Fixed: The bundled 360° panorama tour section was blank.',
+        'Fixed: The panorama placeholder was almost all sky.',
+        'Fixed: The panorama tour section had its control bar switched off and sat at content width.',
+        'Fixed: The block now has a working preview in the inserter.',
+        'Improved: Placeholder images are drawn inline, so they never 404 and add no outbound request.',
+      ],
+    },
+    {
+      type: 'update',
       version: '1.0.10 – 9 August 2026',
       list: [
         'Fixed: Block styles could load from cache after an update — stylesheets now version with the build.',

@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, image zoom, image map, photo viewer, gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 1.0.12
+Stable tag: 1.1.0
 Requires PHP: 7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ Whether you run an eCommerce store, photography portfolio, real estate website, 
 
 Every feature is included for free. There is no pro version, no locked styles, and no upsells.
 
-**[Image Viewer](https://bplugins.com/products/image-viewer/)** | **[Documentation](https://bplugins.com/docs/image-viewer)**  | [**Support**](https://bplugins.com/support/)
+**[Image Viewer](https://bplugins.com/products/image-viewer/)** | **[Documentation](https://bplugins.com/docs/image-viewer/)**  | [**Support**](https://bplugins.com/support/)
 
 
 ### Key Features
@@ -73,7 +73,7 @@ Whether you need an Image Zoom Plugin, Image Magnifier, Interactive Image Map, o
 
 * **There are four different viewer types** — zoom, magnify, map, and pano/rotation.
 
-* **Customer Service** — Our staff is always available to assist you. It's easy for users to <a href="https://bplugins.com/support" target="_blank">**ask questions**</a> and get quick answers.
+* **Customer Service** — Our staff is always available to assist you. It's easy for users to <a href="https://bplugins.com/support/" target="_blank">**ask questions**</a> and get quick answers.
 
 * **Updates** — With frequent updates, we bring the functionality and performance of the plugin up to date. Upgrading to newer versions is also easy, ensuring uninterrupted service.
 
@@ -171,13 +171,13 @@ No, this block is beginner-friendly and does not require any coding knowledge to
 
 == Changelog ==
 
-= 1.0.12 – 6 September 2026 =
+= 1.1.0 – 13 October 2026 =
+* Update: Freemius SDK updated to 2.13.5.
+* Fix: After activating the plugin, the page no longer says you are not allowed to access it. The Freemius opt-in now opens first, then the first page of the plugin.
 * **Fixed: the 360° panorama showed nothing to visitors.** The viewer fetched its image through a REST proxy whose permission check is `current_user_can('upload_files')`, so on a published page every logged-out visitor got a 401 back and the panorama never appeared — it only ever worked for the editor who built it. The proxy exists to get around CORS, which an image from your own media library does not need, so those now go straight to the viewer. A genuinely cross-origin image still uses the proxy, and if that request is refused the viewer now tries the image directly instead of showing an empty box.
 * **Fixed: the bundled 360° panorama tour section was blank.** Its inline placeholder could not pass the proxy at all — the proxy rejects anything that is not an http(s) URL, and does not accept SVG. With the change above it renders immediately.
 * **Fixed: the panorama placeholder was almost all sky.** In an equirectangular image the horizon falls on the vertical middle, and the placeholder's hills sat well below it, so a visitor at eye level saw an empty blue field. It is now a two-layer ridge across the horizon, still seamless where the left and right edges meet.
 * Fixed: the panorama tour section had its control bar switched off, and sat at content width rather than using the room the section gives it.
-
-= 1.0.11 – 6 September 2026 =
 * **New — four ready-made sections, one per viewer type.** The block does four quite different things — Zoom, Magnify, Image Map and 360° Rotation — but arrives set to one of them, so most people never find the other three. Four patterns now ship under **Image Viewers** in the inserter: Product detail with zoom, Magnifier over fine detail, Interactive floor plan and 360° panorama tour.
 * Each arrives finished — viewer type, size, and the settings that suit it. The floor plan comes with four clickable areas already placed, so the image map is working the moment you insert it rather than after you have drawn hotspots by hand.
 * **Fixed: the block had no usable inserter preview.** Its example set two attributes the block does not have — `preview` and `columns` — so hovering it in the inserter fell back to the plain default. It now previews a working image map.

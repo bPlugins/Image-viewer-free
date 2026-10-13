@@ -175,7 +175,7 @@ if (! class_exists('bpivbBlock')) {
                 'dashboard' => current_user_can('manage_options')
                     ? admin_url('edit.php?post_type=bpivb&page=image_viewer_block#/pricing')
                     : '',
-                'external'  => 'https://bplugins.com/products/image-viewer/pricing',
+                'external'  => 'https://bplugins.com/products/image-viewer/pricing/',
             ]) . ';';
 
             wp_add_inline_script('bpivb-image-viewer-directory-editor-script', $editor_script_data, 'before');
